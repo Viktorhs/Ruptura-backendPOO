@@ -60,4 +60,22 @@ export class CreateSheetRepository {
       sheetId: sheetId.id,
     };
   }
+
+  async createWeapon(sheetId: number) {
+    const weaponUpdate = await prisma.characterWeapons.create({
+      data: {
+        sheetId: sheetId,
+      },
+    });
+    return weaponUpdate;
+  }
+
+  async createDefense(sheetId: number) {
+    const defenseUpdate = await prisma.characterDefenses.create({
+      data: {
+        sheetId: sheetId,
+      },
+    });
+    return defenseUpdate;
+  }
 }

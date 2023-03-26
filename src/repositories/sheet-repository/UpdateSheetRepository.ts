@@ -78,7 +78,7 @@ export class UpdateSheetRepository {
     ]);
   }
 
-  async updateWepon(sheet: any) {
+  async updateWeapon(sheet: any) {
     const weaponUpdate = await prisma.characterWeapons.update({
       where: {
         id: sheet.id,
