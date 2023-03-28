@@ -1,7 +1,7 @@
-import { DeleteDefenseController } from "./DeleteDefenseController";
-import { DeleteDefenseService } from "./DeleteDefenseService";
-import { GetSheetRepository } from "./../../../repositories/sheet-repository/GetSheetRepository";
-import { DeleteSheet } from "./../../../repositories/sheet-repository/DeleteSheetRepository";
+import { DeleteDefenseController } from "./DeleteDefenseController.js";
+import { DeleteDefenseService } from "./DeleteDefenseService.js";
+import { GetSheetRepository } from "./../../../repositories/sheet-repository/GetSheetRepository.js";
+import { DeleteSheet } from "./../../../repositories/sheet-repository/DeleteSheetRepository.js";
 
 const deleteSheet = new DeleteSheet();
 const getSheetRepository = new GetSheetRepository();
