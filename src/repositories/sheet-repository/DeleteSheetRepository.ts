@@ -55,4 +55,20 @@ export class DeleteSheet {
       }),
     ]);
   }
+
+  async deleteWeapon(id: number) {
+    return await prisma.characterWeapons.delete({
+      where: {
+        id,
+      },
+    });
+  }
+
+  async deleteDefense(id: number) {
+    return await prisma.characterDefenses.delete({
+      where: {
+        id,
+      },
+    });
+  }
 }

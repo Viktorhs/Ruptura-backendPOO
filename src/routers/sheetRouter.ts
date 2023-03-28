@@ -7,6 +7,8 @@ import { listSheetsController } from "../useCases/Sheet/listSheets/index.js";
 import { Router, NextFunction, Request, Response } from "express";
 import { authenticateToken } from "../middleware/index.js";
 import { deleteSheetController } from "../useCases/Sheet/deleteSheet/index.js";
+import { deleteWeaponController } from "../useCases/Sheet/deleteWeapon/index.js";
+import { deleteDefenseController } from "../useCases/Sheet/deleteDefense/index.js";
 
 const sheetRouter = Router();
 
@@ -18,6 +20,8 @@ sheetRouter
   .post("/weapon/:sheetId", (req: Request, res: Response) => createWeaponController.handle(req, res))
   .post("/defense/:sheetId", (req: Request, res: Response) => createDefenseController.handle(req, res))
   .put("/:sheetId", (req: Request, res: Response) => updateSheetController.handle(req, res))
-  .delete("/:sheetId", (req: Request, res: Response) => deleteSheetController.handle(req, res));
+  .delete("/:sheetId", (req: Request, res: Response) => deleteSheetController.handle(req, res))
+  .delete("/defense", (req: Request, res: Response) => deleteDefenseController.handle(req, res))
+  .delete("/weapon", (req: Request, res: Response) => deleteWeaponController.handle(req, res));
 
 export default sheetRouter;

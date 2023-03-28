@@ -72,4 +72,20 @@ export class GetSheetRepository {
       },
     });
   }
+
+  async weapon(sheetId: number) {
+    return await prisma.characterWeapons.findMany({
+      where: {
+        sheetId,
+      },
+    });
+  }
+
+  async defense(sheetId: number) {
+    return await prisma.characterDefenses.findMany({
+      where: {
+        sheetId,
+      },
+    });
+  }
 }
